@@ -1,0 +1,16 @@
+{
+  "name": "marketplace-produk",
+  "version": "1.0.0",
+  "description": "Marketplace produk sederhana — tugas CI/CD",
+  "scripts": {
+    "lint:html": "htmlhint \"/*.html\"",
+    "validate:html": "html-validator --verbose --file=index.html && html-validator --verbose --file=product.html",
+    "accessibility": "pa11y-ci",
+    "ci": "npm run lint:html && npm run validate:html && npm run accessibility"
+  },
+  "devDependencies": {
+    "htmlhint": "^1.4.0",
+    "html-validator-cli": "^5.0.0",
+    "pa11y-ci": "^6.0.0"
+  }
+}

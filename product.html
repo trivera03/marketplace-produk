@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Detail Produk - Marketplace Produk</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <h1>Marketplace Produk</h1>
+    <nav>
+      <a href="index.html">Beranda</a>
+      <a href="product.html" aria-current="page">Contoh Produk</a>
+    </nav>
+  </header>
+
+  <main>
+    <article class="product-detail" aria-labelledby="product-title">
+      <img src="https://via.placeholder.com/480x320.png?text=Detail+Produk" alt="Foto produk" />
+      <div class="detail-text">
+        <h2 id="product-title">Pakan Ayam Super</h2>
+        <p class="product-price">Rp 45.000</p>
+        <p class="product-desc">Deskripsi lengkap pakan ayam dengan nutrisi seimbang untuk pertumbuhan optimal.</p>
+
+        <form id="order-form" aria-label="Form pemesanan produk">
+          <label for="qty">Jumlah</label>
+          <input id="qty" name="qty" type="number" min="1" value="1" required />
+
+          <label for="buyer-name">Nama Pembeli</label>
+          <input id="buyer-name" name="buyer-name" type="text" required />
+
+          <button type="submit" class="btn">Pesan Sekarang</button>
+        </form>
+
+        <div id="order-result" role="status" aria-live="polite"></div>
+      </div>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; 2025 Marketplace Produk</p>
+  </footer>
+
+  <script src="scripts.js" defer></script>
+</body>
+</html>

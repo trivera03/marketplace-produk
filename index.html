@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Marketplace Produk - Beranda</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <h1>Marketplace Produk</h1>
+    <nav>
+      <a href="index.html" aria-current="page">Beranda</a>
+      <a href="product.html">Contoh Produk</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="search">
+      <label for="search-input">Cari produk</label>
+      <input id="search-input" type="search" placeholder="Cari: pakan, vitamin, dsb." />
+    </section>
+
+    <section class="product-list" aria-label="Daftar produk">
+      <!-- Contoh produk statis (bisa diperluas/digantikan backend nanti) -->
+      <article class="product" tabindex="0">
+        <img src="https://via.placeholder.com/240x160.png?text=Pakan+A" alt="Pakan A" />
+        <h2 class="product-title">Pakan Ayam Super</h2>
+        <p class="product-price">Rp 45.000</p>
+        <p class="product-desc">Pakan lengkap untuk ayam petelur, kadar protein 18%.</p>
+        <a class="btn" href="product.html">Lihat Detail</a>
+      </article>
+
+      <article class="product" tabindex="0">
+        <img src="https://via.placeholder.com/240x160.png?text=Vitamin+B" alt="Vitamin B" />
+        <h2 class="product-title">Vitamin Ternak Plus</h2>
+        <p class="product-price">Rp 85.000</p>
+        <p class="product-desc">Suplemen gizi untuk meningkatkan imunitas ternak.</p>
+        <a class="btn" href="product.html">Lihat Detail</a>
+      </article>
+
+      <!-- Tambahkan lebih banyak produk sesuai kebutuhan -->
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; 2025 Marketplace Produk — dibuat untuk tugas CI/CD</p>
+  </footer>
+
+  <script src="scripts.js" defer></script>
+</body>
+</html>
