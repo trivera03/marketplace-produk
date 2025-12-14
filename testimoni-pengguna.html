@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marketplace Produk - Testimoni Pengguna</title>
+    <link rel="stylesheet" href="styles-baru.css">
+    <!-- CSS TAMBAHAN UNTUK HALAMAN INI -->
+    <style>
+        .testimoni-section {
+            padding: 5rem 1.5rem;
+            background-color: var(--bg-light);
+        }
+        .testimoni-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+        .testimoni-card {
+            background-color: var(--white);
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            display: flex;
+            gap: 1.5rem;
+            align-items: center;
+            flex-wrap: wrap;
+            text-align: center;
+        }
+        .testimoni-foto img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--secondary);
+        }
+        .testimoni-content h3 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+        .testimoni-content p {
+            color: var(--text-gray);
+            line-height: 1.7;
+            margin-bottom: 1rem;
+        }
+        .bintang {
+            color: #ffc107;
+            font-size: 1.2rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- NAVIGASI -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <h2 class="nav-logo">Marketplace<span>Produk</span></h2>
+            <ul class="nav-menu">
+                <li><a href="beranda.html">Beranda</a></li>
+                <li><a href="tentang-kami.html">Tentang</a></li>
+                <li><a href="testimoni-pengguna.html" class="active">Testimoni</a></li>
+                <li><a href="hubungi-kami.html">Kontak</a></li>
+                <li><a href="detail-produk.html">Detail Produk</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- TESTIMONI -->
+    <section class="testimoni-section">
+        <div class="section-title">
+            <h2>Apa Kata Mereka?</h2>
+            <hr>
+            <p>Ulasan dari pembeli dan penjual yang sudah menggunakan layanan kami</p>
+        </div>
+        <div class="testimoni-container">
+            <div class="testimoni-card">
+                <div class="testimoni-foto">
+                    <img src="https://via.placeholder.com/100" alt="Rina Dewi">
+                </div>
+                <div class="testimoni-content">
+                    <h3>Rina Dewi - Pembeli</h3>
+                    <p>"Sangat puas dengan produk kerajinan tangan yang saya beli! Kualitasnya sangat baik dan pengirimannya cepat. Sudah menjadi pelanggan tetap nih!"</p>
+                    <div class="bintang">⭐⭐⭐⭐⭐</div>
+                </div>
+            </div>
+            <div class="testimoni-card">
+                <div class="testimoni-foto">
+                    <img src="https://via.placeholder.com/100" alt="Budi Santoso">
+                </div>
+                <div class="testimoni-content">
+                    <h3>Budi Santoso - Penjual UMKM</h3>
+                    <p>"Platform ini sangat membantu saya menjangkau pembeli lebih banyak. Sebelumnya saya hanya bisa menjual ke tetangga saja, sekarang sudah sampai ke luar kota!"</p>
+                    <div class="bintang">⭐⭐⭐⭐⭐</div>
+                </div>
+            </div>
+            <div class="testimoni-card">
+                <div class="testimoni-foto">
+                    <img src="https://via.placeholder.com/100" alt="Siti Aisyah">
+                </div>
+                <div class="testimoni-content">
+                    <h3>Siti Aisyah - Pembeli</h3>
+                    <p>"Pilihan produknya beragam dan harga terjangkau. Saya juga senang bisa membantu usaha lokal dengan membeli produk mereka di sini."</p>
+                    <div class="bintang">⭐⭐⭐⭐</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div>
+            <p>&copy; 2025 Marketplace Produk. Semua Hak Dilindungi.</p>
+            <p>Jl. Raya Candi No. 123, Malang - Jawa Timur</p>
+        </div>
+    </footer>
+</body>
+</html>

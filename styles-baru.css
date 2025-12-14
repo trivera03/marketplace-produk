@@ -1,0 +1,141 @@
+/* === VARIABEL WARNA & FONT === */
+:root {
+    --primary: #0F3460;
+    --secondary: #E94560;
+    --bg-light: #F8F9FA;
+    --text-dark: #333333;
+    --text-gray: #666666;
+    --white: #FFFFFF;
+    --border: #DDDDDD;
+}
+
+/* === RESET DASAR === */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* === NAVBAR === */
+.navbar {
+    background-color: var(--primary);
+    padding: 1rem 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-logo {
+    color: var(--white);
+    font-size: 1.5rem;
+}
+
+.nav-logo span {
+    color: var(--secondary);
+}
+
+.nav-menu {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-menu a {
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.nav-menu a:hover, .nav-menu a.active {
+    color: var(--secondary);
+    border-bottom: 2px solid var(--secondary);
+}
+
+/* === BUTTON === */
+.btn-primary {
+    background-color: var(--secondary);
+    color: var(--white);
+    padding: 0.8rem 2rem;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #d13550;
+}
+
+.btn-secondary {
+    background-color: var(--primary);
+    color: var(--white);
+    padding: 0.6rem 1.5rem;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+
+.btn-secondary:hover {
+    background-color: #0c2a4d;
+}
+
+/* === SECTION TITLE === */
+.section-title {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.section-title h2 {
+    color: var(--primary);
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.section-title hr {
+    width: 80px;
+    height: 3px;
+    background-color: var(--secondary);
+    border: none;
+    margin: 0 auto;
+}
+
+.section-title p {
+    color: var(--text-gray);
+    margin-top: 1rem;
+}
+
+/* === FOOTER === */
+.footer {
+    background-color: var(--primary);
+    color: var(--white);
+    text-align: center;
+    padding: 2rem 1.5rem;
+    margin-top: 3rem;
+}
+
+.footer p {
+    margin-bottom: 0.5rem;
+}
+
+/* === RESPONSIF HP === */
+@media screen and (max-width: 768px) {
+    .nav-container {
+        flex-direction: column;
+        gap: 1rem;
+    }
+}
