@@ -12,7 +12,8 @@ Project sederhana: halaman HTML statis untuk marketplace produk + konfigurasi CI
    - npm run accessibility -- pa11y-ci
 
 ## CI/CD
-Terdapat workflow GitHub Actions di .github/workflows/ci.yml. Workflow berjalan pada event push dan pull_request ke main dan menjalankan lint, validator, dan accessibility check.
+Terdapat workflow GitHub Actions di .github/workflows/ci.yml. 
+Workflow berjalan pada event push dan pull_request ke main dan menjalankan lint, validator, dan accessibility check.
 
 ## Catatan
 - Tools dev menggunakan Node.js (hanya untuk linting/validasi). Konten tetap statis HTML/CSS/JS.
