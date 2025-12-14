@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marketplace Produk - Detail Produk</title>
+    <link rel="stylesheet" href="styles-baru.css">
+    <style>
+        .detail-section {
+            padding: 5rem 1.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .detail-container {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+        .detail-foto img#mainPhoto {
+            width: 350px;
+            border-radius: 10px;
+            border: 2px solid #ddd;
+        }
+        .thumbs {
+            display: flex;
+            gap: 10px;
+            margin-top: 1rem;
+        }
+        .thumbs img {
+            width: 80px;
+            border-radius: 10px;
+            cursor: pointer;
+            border: 2px solid #ddd;
+        }
+        .detail-info h3 {
+            color: #0F3460;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+        .detail-info .harga {
+            color: #E94560;
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        .detail-info .deskripsi {
+            color: #666;
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+        .detail-form label {
+            color: #0F3460;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+            margin-top: 1rem;
+            display: block;
+        }
+        .detail-form input, .detail-form select {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- NAVIGASI -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <h2 class="nav-logo">Marketplace<span>Produk</span></h2>
+            <ul class="nav-menu">
+                <li><a href="beranda.html">Beranda</a></li>
+                <li><a href="tentang-kami.html">Tentang</a></li>
+                <li><a href="testimoni-pengguna.html">Testimoni</a></li>
+                <li><a href="hubungi-kami.html">Kontak</a></li>
+                <li><a href="detail-produk.html" class="active">Detail Produk</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- DETAIL PRODUK -->
+    <section class="detail-section">
+        <div class="section-title">
+            <h2>Detail Produk</h2>
+            <hr>
+        </div>
+        <div class="detail-container">
+            <div class="detail-foto">
+                <img id="mainPhoto" src="https://via.placeholder.com/350" alt="Kerajinan Bambu">
+                <div class="thumbs">
+                    <img src="https://via.placeholder.com/80" alt="Foto 1" onclick="document.getElementById('mainPhoto').src=this.src">
+                    <img src="https://via.placeholder.com/80" alt="Foto 2" onclick="document.getElementById('mainPhoto').src=this.src">
+                    <img src="https://via.placeholder.com/80" alt="Foto 3" onclick="document.getElementById('mainPhoto').src=this.src">
+                </div>
+            </div>
+            <div class="detail-info">
+                <h3>Kerajinan Tangan Bambu - Vas Bunga</h3>
+                <p class="harga">Rp 150.000</p>
+                <p class="deskripsi">Dibuat dari bahan bambu alami oleh pengrajin lokal Malang. Ramah lingkungan, tekstur halus, dan bentuk elegan cocok untuk dekorasi rumah atau hadiah spesial.</p>
+                <div class="detail-form">
+                    <label for="jumlah">Jumlah:</label>
+                    <input type="number" id="jumlah" min="1" value="1">
+                    
+                    <label for="ukuran">Ukuran:</label>
+                    <select id="ukuran">
+                        <option value="kecil">Kecil (15cm)</option>
+                        <option value="sedang">Sedang (25cm)</option>
+                        <option value="besar">Besar (35cm)</option>
+                    </select>
+                    
+                    <button class="btn-primary" style="margin-top: 1.5rem;">Beli Sekarang</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div>
+            <p>&copy; 2025 Marketplace Produk. Semua Hak Dilindungi.</p>
+            <p>Jl. Raya Candi No. 123, Malang - Jawa Timur</p>
+        </div>
+    </footer>
+</body>
+</html>

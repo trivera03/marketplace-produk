@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marketplace Produk - Beranda</title>
+    <link rel="stylesheet" href="styles-baru.css">
+    <!-- CSS TAMBAHAN UNTUK HERO -->
+    <style>
+        .hero {
+            background: linear-gradient(rgba(15,52,96,0.8), rgba(15,52,96,0.8)), url('https://via.placeholder.com/1920x800') center/cover no-repeat;
+            height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white);
+        }
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .produk-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        .produk-card {
+            background-color: var(--white);
+            border-radius: 10px;
+            padding: 1.5rem;
+            text-align: center;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+        .produk-card img {
+            width: 100%;
+            border-radius: 5px;
+            margin-bottom: 1rem;
+        }
+        .produk-card h3 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+        .produk-card p {
+            color: var(--text-gray);
+            margin-bottom: 1.5rem;
+        }
+        .produk-section {
+            padding: 5rem 1.5rem;
+            background-color: var(--bg-light);
+        }
+    </style>
+</head>
+<body>
+    <!-- NAVIGASI -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <h2 class="nav-logo">Marketplace<span>Produk</span></h2>
+            <ul class="nav-menu">
+                <li><a href="beranda.html" class="active">Beranda</a></li>
+                <li><a href="tentang-kami.html">Tentang</a></li>
+                <li><a href="testimoni-pengguna.html">Testimoni</a></li>
+                <li><a href="hubungi-kami.html">Kontak</a></li>
+                <li><a href="detail-produk.html">Detail Produk</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Tempat Belanja Produk Lokal Terpercaya</h1>
+            <p>Bantu UMKM Indonesia berkembang dengan membeli produk berkualitas dari tangan lokal kita!</p>
+            <a href="#produk" class="btn-primary">Lihat Produk</a>
+        </div>
+    </section>
+
+    <!-- PRODUK UNGGULAN -->
+    <section id="produk" class="produk-section">
+        <div class="section-title">
+            <h2>Produk Unggulan</h2>
+            <hr>
+        </div>
+        <div class="produk-container">
+            <div class="produk-card">
+                <img src="https://via.placeholder.com/300x200" alt="Kerajinan Bambu">
+                <h3>Kerajinan Tangan Bambu</h3>
+                <p>Rp 150.000</p>
+                <a href="detail-produk.html" class="btn-secondary">Lihat Detail</a>
+            </div>
+            <div class="produk-card">
+                <img src="https://via.placeholder.com/300x200" alt="Makanan Kering">
+                <h3>Makanan Kering Rumahan</h3>
+                <p>Rp 50.000</p>
+                <a href="detail-produk.html" class="btn-secondary">Lihat Detail</a>
+            </div>
+            <div class="produk-card">
+                <img src="https://via.placeholder.com/300x200" alt="Pakaian Katun">
+                <h3>Pakaian Katun Lokal</h3>
+                <p>Rp 200.000</p>
+                <a href="detail-produk.html" class="btn-secondary">Lihat Detail</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div>
+            <p>&copy; 2025 Marketplace Produk. Semua Hak Dilindungi.</p>
+            <p>Jl. Raya Candi No. 123, Malang - Jawa Timur</p>
+        </div>
+    </footer>
+</body>
+</html>
