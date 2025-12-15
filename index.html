@@ -1,102 +1,35 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <title>Website Pakan Ternak</title>
-
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            background-color: #f4f4f4;
-        }
-
-        header {
-            background-color: #2e7d32;
-            color: white;
-            padding: 20px;
-            text-align: center;
-        }
-
-        .search-box {
-            margin-top: 15px;
-        }
-
-        .search-box input {
-            width: 60%;
-            padding: 10px;
-            border-radius: 5px;
-            border: none;
-        }
-
-        .container {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            padding: 20px;
-            gap: 20px;
-        }
-
-        .card {
-            background: white;
-            width: 250px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            overflow: hidden;
-            text-align: center;
-        }
-
-        .card img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-        }
-
-        .card h3 {
-            margin: 10px 0;
-        }
-
-        .card p {
-            padding: 0 10px 15px;
-            font-size: 14px;
-        }
-
-        footer {
-            text-align: center;
-            padding: 15px;
-            background: #2e7d32;
-            color: white;
-            margin-top: 20px;
-        }
-    </style>
-</head>
-
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Marketplace Produk - Beranda</title>
+  <link rel="stylesheet" href="styles.css">
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css">
 <body>
+  <header class="site-header">
+    <h1>Marketplace Produk</h1>
+    <nav>
+      <a href="index.html" aria-current="page">Beranda</a>
+      <a href="product.html">Contoh Produk</a>
+    </nav>
+  </header>
 
-<header>
-    <h1>Website Pakan Ternak</h1>
-    <p>Menyediakan berbagai jenis pakan ternak berkualitas</p>
+  <main>
+    <section class="search">
+      <label for="search-input">Cari produk</label>
+      <input id="search-input" type="search" placeholder="Cari: pakan, vitamin, dsb." />
+    </section>
 
-    <div class="search-box">
-        <input type="text" placeholder="Cari pakan ternak...">
-    </div>
-</header>
-
-<div class="container">
-
-    <div class="card">
-        <img src="pakan_ayam.jpg" alt="Pakan Ayam">
-        <h3>Pakan Ayam Petelur</h3>
-        <p>Pakan ayam berkualitas untuk pertumbuhan optimal.</p>
-		<p class="harga">Rp 250.000</p>
-    </div>
-
-    <div class="card">
-        <img src="pakan_sapi.jpg" alt="Pakan Sapi">
-        <h3>Pakan Sapi Pedaging</h3>
-        <p>Pakan sapi kaya nutrisi dan serat alami.</p>
-		<p class="harga">Rp 500.000</p>
-    </div>
+    <section class="product-list" aria-label="Daftar produk">
+      <!-- Contoh produk statis (bisa diperluas/digantikan backend nanti) -->
+      <article class="product" tabindex="0">
+        <img src="images/pakan ayam.jpeg" alt="Pakan A" />
+        <h2 class="product-title">Pakan Ayam Super</h2>
+        <p class="product-price">Rp 45.000</p>
+        <p class="product-desc">Pakan lengkap untuk ayam petelur, kadar protein 18%.</p>
+        <a class="btn" href="product.html">Lihat Detail</a>
+      </article>
 
     <div class="card">
         <img src="pakan_kambing.jpg" alt="Pakan Kambing">
