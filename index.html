@@ -3,12 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <title>PakanTernak.id</title>
+    <meta name="description" content="Marketplace pakan ternak modern untuk peternak Indonesia">
 
     <style>
         body {
             margin: 0;
             font-family: Arial, sans-serif;
             background: #f4f6f8;
+            color: #333;
         }
 
         nav {
@@ -31,11 +33,11 @@
             background: linear-gradient(to right, #43a047, #66bb6a);
             color: white;
             text-align: center;
-            padding: 60px 20px;
+            padding: 70px 20px;
         }
 
         section {
-            padding: 40px 30px;
+            padding: 50px 30px;
         }
 
         h2 {
@@ -43,17 +45,17 @@
             margin-bottom: 30px;
         }
 
-        .produk-grid {
+        .grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 20px;
+            gap: 25px;
         }
 
         .card {
             background: white;
-            border-radius: 12px;
+            border-radius: 14px;
             padding: 15px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.1);
             text-align: center;
         }
 
@@ -61,145 +63,155 @@
             width: 100%;
             height: 160px;
             object-fit: cover;
-            border-radius: 10px;
+            border-radius: 12px;
         }
 
         .badge {
             background: #ff9800;
             color: white;
-            display: inline-block;
             padding: 4px 10px;
             border-radius: 6px;
             font-size: 12px;
+            display: inline-block;
             margin-bottom: 8px;
         }
 
         .harga {
             color: #2e7d32;
             font-weight: bold;
-            margin: 10px 0;
         }
 
         button {
             background: #2e7d32;
             color: white;
             border: none;
-            padding: 10px;
-            border-radius: 6px;
-            cursor: pointer;
+            padding: 12px;
             width: 100%;
+            border-radius: 8px;
+        }
+
+        .box {
+            background: #e8f5e9;
+            padding: 25px;
+            border-left: 5px solid #2e7d32;
+            border-radius: 10px;
+        }
+
+        details {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 10px;
         }
 
         footer {
             background: #1b5e20;
             color: white;
             text-align: center;
-            padding: 25px;
+            padding: 30px 10px;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
         }
     </style>
 </head>
 <body>
 
-<!-- NAVBAR -->
 <nav>
     <h2>PakanTernak.id</h2>
     <div>
         <a href="#beranda">Beranda</a>
         <a href="#produk">Produk</a>
-        <a href="#keranjang">Keranjang</a>
+        <a href="#simulasi">Simulasi</a>
+        <a href="#kontak">Kontak</a>
     </div>
 </nav>
 
-<!-- HERO -->
 <header id="beranda">
     <h1>Marketplace Pakan Ternak Modern</h1>
-    <p>Pakan berkualitas untuk semua jenis ternak</p>
+    <p>Solusi pakan berkualitas untuk peternak Indonesia</p>
 </header>
 
-<!-- PRODUK -->
+<section>
+    <h2>Keunggulan Kami</h2>
+    <div class="grid">
+        <div class="card">🌾 Nutrisi Lengkap</div>
+        <div class="card">🐄 Meningkatkan Produktivitas</div>
+        <div class="card">🛡️ Aman & Berkualitas</div>
+        <div class="card">🚚 Pengiriman Cepat</div>
+    </div>
+</section>
+
 <section id="produk">
     <h2>Produk Pakan Ternak</h2>
-
-    <div class="produk-grid">
+    <div class="grid">
 
         <div class="card">
             <span class="badge">Terlaris</span>
-            <img src="assets/img/ayam.jpg.jpg" alt="Pakan Ayam">
-            <h3>Pakan Ayam Petelur</h3>
+            <img src="assets/img/ayam.jpg.jpg">
+            <h3>Pakan Ayam</h3>
             <p class="harga">Rp 250.000</p>
             <button>Tambah ke Keranjang</button>
         </div>
 
         <div class="card">
-            <span class="badge">Premium</span>
-            <img src="assets/img/sapi.jpg.jpg" alt="Pakan Sapi">
-            <h3>Pakan Sapi Potong</h3>
+            <img src="assets/img/sapi.jpg.jpg">
+            <h3>Pakan Sapi</h3>
             <p class="harga">Rp 500.000</p>
             <button>Tambah ke Keranjang</button>
         </div>
 
-        <div class="card">
-            <img src="assets/img/kambing.jpg.jpg" alt="Pakan Kambing">
-            <h3>Pakan Kambing</h3>
-            <p class="harga">Rp 300.000</p>
-            <button>Tambah ke Keranjang</button>
-        </div>
-
-        <div class="card">
-            <img src="assets/img/domba.jpg.jpg" alt="Pakan Domba">
-            <h3>Pakan Domba</h3>
-            <p class="harga">Rp 320.000</p>
-            <button>Tambah ke Keranjang</button>
-        </div>
-
-        <div class="card">
-            <img src="assets/img/bebek.jpg.jpg" alt="Pakan Bebek">
-            <h3>Pakan Bebek</h3>
-            <p class="harga">Rp 230.000</p>
-            <button>Tambah ke Keranjang</button>
-        </div>
-
-        <div class="card">
-            <img src="assets/img/ikan.jpg.jpg" alt="Pakan Ikan">
-            <h3>Pakan Ikan</h3>
-            <p class="harga">Rp 200.000</p>
-            <button>Tambah ke Keranjang</button>
-        </div>
-
-        <div class="card">
-            <img src="assets/img/lele.jpg.jpg" alt="Pakan Lele">
-            <h3>Pakan Lele</h3>
-            <p class="harga">Rp 190.000</p>
-            <button>Tambah ke Keranjang</button>
-        </div>
-
-        <div class="card">
-            <img src="assets/img/burung.jpg.jpg" alt="Pakan Burung">
-            <h3>Pakan Burung</h3>
-            <p class="harga">Rp 150.000</p>
-            <button>Tambah ke Keranjang</button>
-        </div>
-
-        <div class="card">
-            <img src="assets/img/kelinci.jpg.jpg" alt="Pakan Kelinci">
-            <h3>Pakan Kelinci</h3>
-            <p class="harga">Rp 170.000</p>
-            <button>Tambah ke Keranjang</button>
-        </div>
+        <div class="card"><img src="assets/img/kambing.jpg.jpg"><h3>Pakan Kambing</h3><p class="harga">Rp 300.000</p><button>Tambah</button></div>
+        <div class="card"><img src="assets/img/domba.jpg.jpg"><h3>Pakan Domba</h3><p class="harga">Rp 320.000</p><button>Tambah</button></div>
+        <div class="card"><img src="assets/img/bebek.jpg.jpg"><h3>Pakan Bebek</h3><p class="harga">Rp 230.000</p><button>Tambah</button></div>
+        <div class="card"><img src="assets/img/ikan.jpg.jpg"><h3>Pakan Ikan</h3><p class="harga">Rp 200.000</p><button>Tambah</button></div>
+        <div class="card"><img src="assets/img/lele.jpg.jpg"><h3>Pakan Lele</h3><p class="harga">Rp 190.000</p><button>Tambah</button></div>
+        <div class="card"><img src="assets/img/burung.jpg.jpg"><h3>Pakan Burung</h3><p class="harga">Rp 150.000</p><button>Tambah</button></div>
+        <div class="card"><img src="assets/img/kelinci.jpg.jpg"><h3>Pakan Kelinci</h3><p class="harga">Rp 170.000</p><button>Tambah</button></div>
 
     </div>
 </section>
 
-<!-- KERANJANG -->
-<section id="keranjang">
-    <h2>Keranjang Belanja</h2>
-    <p style="text-align:center;">Total: <strong>Rp 0</strong> (HTML saja)</p>
+<section id="simulasi">
+    <h2>Simulasi Pembelian</h2>
+
+    <div class="box">
+        <p><strong>Pilih Produk:</strong></p>
+        <input type="checkbox"> Pakan Ayam<br>
+        <input type="checkbox"> Pakan Sapi<br><br>
+
+        <p><strong>Jumlah:</strong></p>
+        <select>
+            <option>1 Karung</option>
+            <option>2 Karung</option>
+            <option>5 Karung</option>
+        </select>
+
+        <p><strong>Pembayaran:</strong></p>
+        <input type="radio" name="bayar"> COD
+        <input type="radio" name="bayar"> Transfer
+
+        <p><strong>Total (Simulasi):</strong> Rp 500.000</p>
+        <button>Pesan Sekarang</button>
+
+        <p><em>*Simulasi, tidak memproses transaksi*</em></p>
+    </div>
 </section>
 
-<!-- FOOTER -->
+<section id="kontak">
+    <h2>Hubungi Kami</h2>
+    <input type="text" placeholder="Nama">
+    <input type="email" placeholder="Email">
+    <textarea placeholder="Pesan"></textarea>
+    <button>Kirim</button>
+</section>
+
 <footer>
-    <p>Project Kelompok</p>
-    <p>Faiqa Wafa Fiqh | Ladya F.C.N.D | Tri Vera Wahyuningsih</p>
+    <h3>Project Kelompok</h3>
+    <p>AFIF • TRI VERA • ANNISA • MAHFUD</p>
     <p>© 2025 PakanTernak.id</p>
 </footer>
 
