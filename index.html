@@ -1,48 +1,279 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Marketplace Produk - Beranda</title>
-  <link rel="stylesheet" href="styles.css">
-   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Marketplace Pakan Ternak</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --primary: #2ecc71;
+      --secondary: #27ae60;
+      --dark: #1e8449;
+      --bg: #f8fafc;
+      --card: #ffffff;
+      --text: #2c3e50;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body { background: var(--bg); color: var(--text); }
+
+    /* ===== NAVBAR ===== */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(30,132,73,0.95);
+      backdrop-filter: blur(6px);
+      padding: 16px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    nav .logo {
+      color: #fff;
+      font-weight: 700;
+      font-size: 1.3rem;
+      letter-spacing: 0.5px;
+    }
+
+    nav a {
+      color: #ecf0f1;
+      margin-left: 24px;
+      text-decoration: none;
+      font-weight: 500;
+      position: relative;
+    }
+
+    nav a::after {
+      content: '';
+      position: absolute;
+      bottom: -6px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: #fff;
+      transition: 0.3s;
+    }
+
+    nav a:hover::after { width: 100%; }
+
+    /* ===== HERO ===== */
+    header {
+      min-height: 80vh;
+      background: linear-gradient(135deg, rgba(46,204,113,0.9), rgba(39,174,96,0.9)),
+                  url('https://images.unsplash.com/photo-1500595046743-cd271d694d30') center/cover;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    header h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    header p {
+      max-width: 600px;
+      margin: auto;
+      font-size: 1.1rem;
+      opacity: 0.95;
+    }
+
+    /* ===== CONTAINER ===== */
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 70px 20px;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .section-title h2 {
+      font-size: 2.2rem;
+      margin-bottom: 10px;
+    }
+
+    .section-title p { color: #555; }
+
+    /* ===== PRODUCTS ===== */
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+    }
+
+    .card {
+      background: var(--card);
+      border-radius: 22px;
+      overflow: hidden;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+      transition: 0.4s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-10px) scale(1.02);
+      box-shadow: 0 30px 50px rgba(0,0,0,0.15);
+    }
+
+    .card img {
+      width: 100%;
+      height: 190px;
+      object-fit: cover;
+    }
+
+    .card-body { padding: 22px; }
+
+    .card h3 {
+      color: var(--dark);
+      margin-bottom: 10px;
+      font-size: 1.2rem;
+    }
+
+    .price {
+      font-weight: 600;
+      margin: 15px 0;
+      font-size: 1.1rem;
+    }
+
+    .btn {
+      display: inline-block;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: white;
+      padding: 12px 18px;
+      border-radius: 12px;
+      text-decoration: none;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .btn:hover { opacity: 0.9; transform: scale(1.03); }
+
+    /* ===== CART ===== */
+    .cart {
+      margin-top: 80px;
+      background: var(--card);
+      padding: 35px;
+      border-radius: 22px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+    }
+
+    .cart h2 { margin-bottom: 20px; }
+
+    .cart ul li { margin-bottom: 8px; }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: #145a32;
+      color: #ecf0f1;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    footer p { opacity: 0.9; }
+
+    @media (max-width: 768px) {
+      header h1 { font-size: 2.2rem; }
+    }
+  </style>
+</head>
 <body>
-  <header class="site-header">
-    <h1>Marketplace Produk</h1>
-    <nav>
-      <a href="index.html" aria-current="page">Beranda</a>
-      <a href="product.html">Contoh Produk</a>
-    </nav>
-  </header>
 
-  <main>
-    <section class="search">
-      <label for="search-input">Cari produk</label>
-      <input id="search-input" type="search" placeholder="Cari: pakan, vitamin, dsb." />
-    </section>
+<nav>
+  <div class="logo">PakanTernak.id</div>
+  <div>
+    <a href="#">Beranda</a>
+    <a href="#produk">Produk</a>
+    <a href="#keranjang">Keranjang</a>
+    <a href="#">Tentang</a>
+  </div>
+</nav>
 
-    <section class="product-list" aria-label="Daftar produk">
-      <!-- Contoh produk statis (bisa diperluas/digantikan backend nanti) -->
-      <article class="product" tabindex="0">
-        <img src="images/pakan ayam.jpeg" alt="Pakan A" />
-        <h2 class="product-title">Pakan Ayam Super</h2>
-        <p class="product-price">Rp 45.000</p>
-        <p class="product-desc">Pakan lengkap untuk ayam petelur, kadar protein 18%.</p>
-        <a class="btn" href="product.html">Lihat Detail</a>
-      </article>
+<header>
+  <div>
+    <h1>Marketplace Pakan Ternak Modern</h1>
+    <p>Menyediakan pakan ternak berkualitas tinggi dengan harga terbaik untuk peternak Indonesia.</p>
+  </div>
+</header>
 
+<div class="container" id="produk">
+  <div class="section-title">
+    <h2>Produk Unggulan</h2>
+    <p>Pilihan pakan ternak terbaik untuk hasil maksimal</p>
+  </div>
+
+  <div class="products">
     <div class="card">
-        <img src="pakan_kambing.jpg" alt="Pakan Kambing">
-        <h3>Pakan Kambing</h3>
-        <p>Pakan kambing sehat untuk produktivitas tinggi.</p>
-		<p class="harga">Rp 300.000</p>
+      <img src="https://images.unsplash.com/photo-1589927986089-35812386d1c4" />
+      <div class="card-body">
+        <h3>Pakan Ayam Petelur</h3>
+        <p>Meningkatkan produksi telur dan kualitas ayam.</p>
+        <div class="price">Rp 250.000</div>
+        <a class="btn" onclick="addCart('Pakan Ayam Petelur',250000)">Tambah ke Keranjang</a>
+      </div>
     </div>
 
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1560807707-8cc77767d783" />
+      <div class="card-body">
+        <h3>Pakan Sapi Potong</h3>
+        <p>Meningkatkan bobot dan kesehatan sapi.</p>
+        <div class="price">Rp 500.000</div>
+        <a class="btn" onclick="addCart('Pakan Sapi Potong',500000)">Tambah ke Keranjang</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1594761051656-1c0f83ed9e3a" />
+      <div class="card-body">
+        <h3>Pakan Kambing</h3>
+        <p>Mendukung pertumbuhan dan daya tahan kambing.</p>
+        <div class="price">Rp 300.000</div>
+        <a class="btn" onclick="addCart('Pakan Kambing',300000)">Tambah ke Keranjang</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="cart" id="keranjang">
+    <h2>Keranjang Belanja</h2>
+    <ul id="cartList"></ul>
+    <h3>Total: Rp <span id="total">0</span></h3>
+  </div>
 </div>
 
 <footer>
-    © 2025 Website Pakan Ternak
+  <p>© 2025 Marketplace Pakan Ternak | Project Kelompok</p>
 </footer>
+
+<script>
+  let total = 0;
+  function addCart(nama, harga) {
+    const list = document.getElementById('cartList');
+    const item = document.createElement('li');
+    item.textContent = nama + ' - Rp ' + harga.toLocaleString('id-ID');
+    list.appendChild(item);
+    total += harga;
+    document.getElementById('total').textContent = total.toLocaleString('id-ID');
+  }
+</script>
 
 </body>
 </html>
