@@ -1,45 +1,64 @@
-document.addEventListener('DOMContentLoaded', function () {
-  const form = document.getElementById('order-form');
-  const result = document.getElementById('order-result');
+let keranjang = [];
+let total = 0;
 
-  // Fitur Form Pemesanan Produk
-  if (form) {
-    form.addEventListener('submit', function (e) {
-      e.preventDefault();
+function tambahKeKeranjang(nama, harga) {
+  keranjang.push({ nama, harga });
+  updateKeranjang();
+  tampilToast();
+}
 
-      const name = form['buyer-name'].value.trim();
-      const qty = Number(form['qty'].value);
+function updateKeranjang() {
+  const list = document.getElementById("keranjang");
+  list.innerHTML = "";
+  total = 0;
 
-      if (!name) {
-        result.textContent = 'Nama pembeli wajib diisi.';
-        result.style.color = 'crimson';
-        return;
-      }
+  keranjang.forEach((item, index) => {
+    total += item.harga;
+    const li = document.createElement("li");
+    li.innerHTML = `
+      ${item.nama} - Rp ${item.harga.toLocaleString()}
+      <button onclick="hapusItem(${index})">❌</button>
+    `;
+    list.appendChild(li);
+  });
 
-      if (!Number.isInteger(qty) || qty < 1) {
-        result.textContent = 'Jumlah harus angka minimal 1.';
-        result.style.color = 'crimson';
-        return;
-      }
+  updateTotal();
+}
 
-      result.style.color = 'green';
-      result.textContent = 'Terima kasih ${name}, pesanan ${qty} produk telah diterima (simulasi).';
-      form.reset();
-    });
+function hapusItem(index) {
+  keranjang.splice(index, 1);
+  updateKeranjang();
+}
+
+function updateTotal() {
+  const jumlah = document.getElementById("jumlah").value;
+  const totalAkhir = total * jumlah;
+  document.getElementById("totalHarga").textContent = totalAkhir.toLocaleString();
+  document.getElementById("totalCheckout").textContent = totalAkhir.toLocaleString();
+}
+
+function bukaModal() {
+  if (keranjang.length === 0) {
+    alert("Keranjang masih kosong!");
+    return;
   }
+  document.getElementById("modal").style.display = "flex";
+}
 
-  // Fitur Search Produk
-  const search = document.getElementById('search-input');
+function tutupModal() {
+  document.getElementById("modal").style.display = "none";
+}
 
-  if (search) {
-    search.addEventListener('input', function () {
-      const q = search.value.toLowerCase();
-      const products = document.querySelectorAll('.product');
+function prosesCheckout() {
+  alert("Pesanan berhasil (simulasi)");
+  keranjang = [];
+  updateKeranjang();
+  tutupModal();
+}
 
-      products.forEach((card) => {
-        const title = card.querySelector('.product-title').textContent.toLowerCase();
-        card.style.display = title.includes(q) ? '' : 'none';
-      });
-    });
-  }
-});
+function tampilToast() {
+  const toast = document.getElementById("toast");
+  toast.style.display = "block";
+  setTimeout(() => toast.style.display = "none", 2000);
+}
+     
