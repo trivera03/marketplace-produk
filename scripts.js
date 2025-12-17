@@ -15,10 +15,7 @@ function updateKeranjang() {
   keranjang.forEach((item, index) => {
     total += item.harga;
     const li = document.createElement("li");
-    li.innerHTML = `
-      ${item.nama} - Rp ${item.harga.toLocaleString()}
-      <button onclick="hapusItem(${index})">❌</button>
-    `;
+    li.innerHTML = `${item.nama} - Rp ${item.harga.toLocaleString()} <button onclick="hapusItem(${index})">❌</button>`;
     list.appendChild(li);
   });
 
@@ -61,4 +58,3 @@ function tampilToast() {
   toast.style.display = "block";
   setTimeout(() => toast.style.display = "none", 2000);
 }
-     
