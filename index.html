@@ -2,105 +2,38 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Marketplace Pakan Ternak</title>
-  <style>
-    body{margin:0;font-family:Arial,Helvetica,sans-serif;background:#f4f6f8;color:#333}
-    header{background:#2e7d32;color:#fff;padding:20px}
-    nav a{color:#fff;margin-right:20px;text-decoration:none;font-weight:bold}
-    .container{max-width:1200px;margin:auto;padding:20px}
-    h2{margin-top:40px}
-    .products{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px}
-    .card{background:#fff;border-radius:10px;box-shadow:0 4px 8px rgba(0,0,0,.1);overflow:hidden}
-    .card img{width:100%;height:180px;object-fit:cover}
-    .card-body{padding:15px}
-    .price{color:#2e7d32;font-weight:bold}
-    button{background:#2e7d32;color:#fff;border:none;padding:10px;border-radius:5px;cursor:pointer;width:100%}
-    button:hover{background:#1b5e20}
-    .cart-box,.form-box,.admin-box{background:#fff;padding:20px;border-radius:10px;box-shadow:0 4px 8px rgba(0,0,0,.1);margin-top:30px}
-    footer{margin-top:50px;background:#1b5e20;color:#fff;padding:20px;text-align:center}
-    input,textarea{width:100%;padding:8px;margin:5px 0 15px;border-radius:5px;border:1px solid #ccc}
-    table{width:100%;border-collapse:collapse}
-    table,th,td{border:1px solid #ccc}
-    th,td{padding:10px;text-align:left}
-  </style>
+  <title>Marketplace Produk Peternakan</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-<header>
-  <h1>Marketplace Pakan Ternak</h1>
-  <p>Pakan berkualitas untuk peternak Indonesia</p>
+<header class="navbar">
+  <h1>Marketplace Produk Peternakan</h1>
   <nav>
-    <a href="#produk">Produk</a>
-    <a href="#checkout">Checkout</a>
-    <a href="#admin">Admin</a>
+    <a href="index.html">Beranda</a>
+    <a href="tentang.html">Tentang</a>
+    <a href="admin.html">Admin</a>
   </nav>
 </header>
 
-<div class="container">
+<section class="banner">
+  <img src="assets/img/banner1.jpg">
+  <img src="assets/img/banner2.jpg">
+  <img src="assets/img/banner3.jpg">
+</section>
 
-<h2 id="produk">Produk</h2>
-<div class="products">
+<section class="produk">
+  <h2>Daftar Produk</h2>
+  <div id="product-list" class="product-grid"></div>
+</section>
 
-<div class="card"><img src="assets/img/ayam.jpg.jpg"><div class="card-body"><h3>Pakan Ayam</h3><p>🍗 Pertumbuhan ayam cepat</p><div class="price">Rp 250.000</div><button onclick="addCart('Pakan Ayam',250000)">Tambah</button></div></div>
-<div class="card"><img src="assets/img/bebek.jpg.jpg"><div class="card-body"><h3>Pakan Bebek</h3><p>🦆 Bobot ideal</p><div class="price">Rp 230.000</div><button onclick="addCart('Pakan Bebek',230000)">Tambah</button></div></div>
-<div class="card"><img src="assets/img/sapi.jpg.jpg"><div class="card-body"><h3>Pakan Sapi</h3><p>🐄 Kualitas daging</p><div class="price">Rp 500.000</div><button onclick="addCart('Pakan Sapi',500000)">Tambah</button></div></div>
-<div class="card"><img src="assets/img/kambing.jpg.jpg"><div class="card-body"><h3>Pakan Kambing</h3><p>🌿 Stamina</p><div class="price">Rp 300.000</div><button onclick="addCart('Pakan Kambing',300000)">Tambah</button></div></div>
-<div class="card"><img src="assets/img/domba.jpg.jpg"><div class="card-body"><h3>Pakan Domba</h3><p>🐑 Pencernaan</p><div class="price">Rp 280.000</div><button onclick="addCart('Pakan Domba',280000)">Tambah</button></div></div>
-<div class="card"><img src="assets/img/ikan.jpg.jpg"><div class="card-body"><h3>Pakan Ikan</h3><p>🐟 Cepat besar</p><div class="price">Rp 200.000</div><button onclick="addCart('Pakan Ikan',200000)">Tambah</button></div></div>
-<div class="card"><img src="assets/img/lele.jpg.jpg"><div class="card-body"><h3>Pakan Lele</h3><p>🐠 Hemat</p><div class="price">Rp 180.000</div><button onclick="addCart('Pakan Lele',180000)">Tambah</button></div></div>
-<div class="card"><img src="assets/img/burung.jpg.jpg"><div class="card-body"><h3>Pakan Burung</h3><p>🐦 Suara bagus</p><div class="price">Rp 150.000</div><button onclick="addCart('Pakan Burung',150000)">Tambah</button></div></div>
-<div class="card"><img src="assets/img/kelinci.jpg.jpg"><div class="card-body"><h3>Pakan Kelinci</h3><p>🐇 Sehat</p><div class="price">Rp 170.000</div><button onclick="addCart('Pakan Kelinci',170000)">Tambah</button></div></div>
-</div>
+<section class="keranjang">
+  <h2>Keranjang Belanja</h2>
+  <ul id="keranjang"></ul>
+  <p>Total: Rp <span id="totalHarga">0</span></p>
+  <button onclick="checkoutWA()">Checkout WhatsApp</button>
+</section>
 
-<div class="cart-box">
-<h3>🛒 Keranjang</h3>
-<ul id="cart"></ul>
-<b>Total: Rp <span id="total">0</span></b>
-</div>
-
-<h2 id="checkout">Form Pembeli</h2>
-<div class="form-box">
-<input id="nama" placeholder="Nama Pembeli">
-<textarea id="alamat" placeholder="Alamat Lengkap"></textarea>
-<select id="bayar">
-  <option>Transfer Bank</option>
-  <option>COD</option>
-  <option>E-Wallet</option>
-</select>
-<button onclick="checkout()">Kirim Pesanan</button>
-</div>
-
-<h2 id="admin">Halaman Admin</h2>
-<div class="admin-box">
-<table>
-<thead><tr><th>Nama</th><th>Alamat</th><th>Total</th><th>Metode</th></tr></thead>
-<tbody id="adminData"></tbody>
-</table>
-</div>
-
-</div>
-
-<footer>© 2025 Marketplace Pakan Ternak</footer>
-
-<script>
-let cart=[];let total=0;
-function addCart(n,h){cart.push(n);total+=h;render();}
-function render(){document.getElementById('cart').innerHTML=cart.map(i=>`<li>${i}</li>`).join('');document.getElementById('total').innerText=total.toLocaleString('id-ID');}
-function checkout(){
-  if(cart.length===0)return alert('Keranjang kosong');
-  const data={nama:nama.value,alamat:alamat.value,total:total,metode:bayar.value};
-  let orders=JSON.parse(localStorage.getItem('orders')||'[]');
-  orders.push(data);
-  localStorage.setItem('orders',JSON.stringify(orders));
-  cart=[];total=0;render();loadAdmin();alert('Pesanan berhasil dikirim');
-}
-function loadAdmin(){
-  let orders=JSON.parse(localStorage.getItem('orders')||'[]');
-  adminData.innerHTML=orders.map(o=>`<tr><td>${o.nama}</td><td>${o.alamat}</td><td>Rp ${o.total.toLocaleString('id-ID')}</td><td>${o.metode}</td></tr>`).join('');
-}
-loadAdmin();
-</script>
-
+<script src="scripts.js"></script>
 </body>
 </html>
