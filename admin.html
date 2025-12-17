@@ -1,24 +1,22 @@
 <!DOCTYPE html>
-<html lang="id">
+<html>
 <head>
-  <meta charset="UTF-8" />
-  <title>Admin Dashboard</title>
-  <link rel="stylesheet" href="styles.css" />
+<title>Login Admin</title>
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<header>
-  <h1>Admin Dashboard</h1>
-  <a href="index.html">← Kembali</a>
-</header>
+<h2>Login Admin</h2>
+<input id="user" placeholder="Username"><br>
+<input id="pass" type="password" placeholder="Password"><br>
+<button onclick="login()">Login</button>
 
-<section class="admin">
-  <h2>Data Produk</h2>
-  <table>
-    <tr><th>Produk</th><th>Harga</th></tr>
-    <tr><td>Ayam</td><td>Rp 25.000</td></tr>
-    <tr><td>Sapi</td><td>Rp 15.000.000</td></tr>
-    <tr><td>Kambing</td><td>Rp 3.000.000</td></tr>
-  </table>
-</section>
+<script>
+function login(){
+  if(user.value==="admin" && pass.value==="admin123"){
+    localStorage.setItem("login","true");
+    location.href="dashboard-admin.html";
+  } else alert("Login salah");
+}
+</script>
 </body>
 </html>

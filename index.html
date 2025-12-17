@@ -1,70 +1,38 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
   <title>Marketplace Produk Peternakan</title>
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-<header>
+<header class="navbar">
   <h1>Marketplace Produk Peternakan</h1>
   <nav>
     <a href="index.html">Beranda</a>
+    <a href="tentang.html">Tentang</a>
     <a href="admin.html">Admin</a>
   </nav>
 </header>
 
-<section class="produk-grid">
-  <div class="product-card">
-    <img src="assets/img/ayam.jpg.jpg" />
-    <h3>Ayam</h3>
-    <p>Rp 25.000</p>
-    <button onclick="tambahKeKeranjang('Ayam',25000)">Tambah</button>
-  </div>
-  <div class="product-card">
-    <img src="assets/img/sapi.jpg.jpg" />
-    <h3>Sapi</h3>
-    <p>Rp 15.000.000</p>
-    <button onclick="tambahKeKeranjang('Sapi',15000000)">Tambah</button>
-  </div>
-  <div class="product-card">
-    <img src="assets/img/kambing.jpg.jpg" />
-    <h3>Kambing</h3>
-    <p>Rp 3.000.000</p>
-    <button onclick="tambahKeKeranjang('Kambing',3000000)">Tambah</button>
-  </div>
+<section class="banner">
+  <img src="assets/img/banner1.jpg">
+  <img src="assets/img/banner2.jpg">
+  <img src="assets/img/banner3.jpg">
+</section>
+
+<section class="produk">
+  <h2>Daftar Produk</h2>
+  <div id="product-list" class="product-grid"></div>
 </section>
 
 <section class="keranjang">
-  <h2>Keranjang</h2>
+  <h2>Keranjang Belanja</h2>
   <ul id="keranjang"></ul>
-
-  <label>Jumlah:
-    <input type="number" id="jumlah" value="1" min="1" onchange="updateTotal()">
-  </label>
-
   <p>Total: Rp <span id="totalHarga">0</span></p>
-  <button onclick="bukaModal()">Checkout</button>
+  <button onclick="checkoutWA()">Checkout WhatsApp</button>
 </section>
-
-<!-- MODAL -->
-<div id="modal" class="modal">
-  <div class="modal-content">
-    <h3>Checkout</h3>
-    <p>Total Bayar: Rp <span id="totalCheckout"></span></p>
-    <button onclick="prosesCheckout()">Proses</button>
-    <button onclick="tutupModal()">Batal</button>
-  </div>
-</div>
-
-<div id="toast" class="toast">Produk ditambahkan ke keranjang</div>
-
-<footer>
-  <p><strong>Kelompok:</strong> Tri Vera, Annisa Tian, Mahfud Hasyim, Muhammad Afif</p>
-  <p>© 2025 Marketplace Produk Peternakan</p>
-</footer>
 
 <script src="scripts.js"></script>
 </body>
