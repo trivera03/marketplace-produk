@@ -7,7 +7,7 @@
 </head>
 <body>
 
-<header class="navbar">
+<header>
   <h1>Marketplace Produk Peternakan</h1>
   <nav>
     <a href="index.html">Beranda</a>
@@ -16,23 +16,26 @@
   </nav>
 </header>
 
-<section class="banner">
-  <img src="assets/img/banner1.jpg">
-  <img src="assets/img/banner2.jpg">
-  <img src="assets/img/banner3.jpg">
+<section class="search">
+  <input id="search" placeholder="Cari produk..." onkeyup="cariProduk()">
 </section>
 
-<section class="produk">
-  <h2>Daftar Produk</h2>
-  <div id="product-list" class="product-grid"></div>
-</section>
+<section id="produk" class="grid"></section>
 
 <section class="keranjang">
   <h2>Keranjang Belanja</h2>
   <ul id="keranjang"></ul>
-  <p>Total: Rp <span id="totalHarga">0</span></p>
-  <button onclick="checkoutWA()">Checkout WhatsApp</button>
+  <h3>Total: Rp <span id="total">0</span></h3>
+  <button onclick="checkoutWhatsApp()">Checkout WhatsApp</button>
 </section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <p><strong>Kelompok:</strong><br>
+    Tri Vera, Annisa Tian, Mahfud Hasyim, Muhammad Afif
+  </p>
+  <p>© 2025 Marketplace Produk Peternakan</p>
+</footer>
 
 <script src="scripts.js"></script>
 </body>
