@@ -2,41 +2,113 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8">
-  <title>Marketplace Produk Peternakan</title>
-  <link rel="stylesheet" href="styles.css">
+  <title>Pakan Ternak</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-<header>
-  <h1>Marketplace Produk Peternakan</h1>
-  <nav>
-    <a href="index.html">Beranda</a>
-    <a href="tentang.html">Tentang</a>
-    <a href="admin.html">Admin</a>
-  </nav>
+<!-- NAVBAR -->
+<header class="navbar">
+  <div class="logo">Pakan<span>Ternak</span></div>
+
+  <ul class="nav-menu">
+    <li><a href="#home">Home</a></li>
+    <li><a href="#shop">Shop</a></li>
+    <li><a href="#best">Best Seller</a></li>
+    <li><a href="#about">About</a></li>
+  </ul>
+
+  <div class="nav-right">
+  <a href="cart.html" class="cart-btn">
+    Cart <span id="cartCount">0</span>
+  </a>
+
+  <a href="login.html" class="btn-login" id="loginMenu">
+    Login
+  </a>
+</div>
+
 </header>
 
-<section class="search">
-  <input id="search" placeholder="Cari produk..." onkeyup="cariProduk()">
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-text">
+    <h1>Premium Products<br>For Premium People</h1>
+    <p>Marketplace modern dengan kualitas terbaik</p>
+    <a href="#" class="btn">Belanja Sekarang</a>
+  </div>
 </section>
 
-<section id="produk" class="grid"></section>
+<!-- PRODUCTS -->
+<section class="products" id="shop">
+  <h2>Our Products</h2>
 
-<section class="keranjang">
-  <h2>Keranjang Belanja</h2>
-  <ul id="keranjang"></ul>
-  <h3>Total: Rp <span id="total">0</span></h3>
-  <button onclick="checkoutWhatsApp()">Checkout WhatsApp</button>
+  <div class="product-list">
+
+  <a href="detail-product1.html" class="product-card">
+    <img src="img/pakan ayam.jpeg">
+    <h3>Pakan Ayam</h3>
+    <p>Produk premium kualitas terbaik</p>
+    <span>Rp 50.000</span>
+  </a>
+
+  <a href="detail-product2.html" class="product-card">
+    <img src="img/Pakan-Anjing.jpg">
+    <h3>Pakan Anjing</h3>
+    <p>Produk premium kualitas terbaik</p>
+    <span>Rp 100.000</span>
+  </a>
+
+  <a href="detail-product3.html" class="product-card">
+    <img src="img/Pakan-Burung.jpg">
+    <h3>Pakan Burung</h3>
+    <p>Produk premium kualitas terbaik</p>
+    <span>Rp 30.000</span>
+  </a>
+
+  <a href="detail-product4.html" class="product-card">
+    <img src="img/Pakan-Kucing.jpg">
+    <h3>Pakan Kucing</h3>
+    <p>Produk premium kualitas terbaik</p>
+    <span>Rp 50.000</span>
+  </a>
+
+</div>
+
 </section>
+<section class="products" id="best">
+  <h2>Best Seller</h2>
 
-<!-- ===== FOOTER ===== -->
-<footer>
-  <p><strong>Kelompok:</strong><br>
-    Tri Vera, Annisa Tian, Mahfud Hasyim, Muhammad Afif
+  <div class="product-list">
+    <a href="detail-product2.html" class="product-card">
+      <img src="img/Pakan-Anjing.jpg">
+      <h3></h3>
+      <p>Produk paling diminati</p>
+      <span>Rp 100.000</span>
+    </a>
+  </div>
+</section>
+<section class="about" id="about">
+  <h2>About Pakan Ternak</h2>
+  <p>
+    Toko pakan Ternak adalah marketplace modern yang menyediakan produk
+    berkualitas tinggi dan premium dengan pelayanan terbaik.
+    Website ini dibuat untuk memberikan pengalaman belanja yang elegan,
+    cepat, dan nyaman.
   </p>
-  <p>© 2025 Marketplace Produk Peternakan</p>
-</footer>
+</section>
 
-<script src="scripts.js"></script>
+<script>
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+  document.getElementById("cartCount").innerText = cart.length;
+</script>
+
+<script src="js/app.js"></script>
+<script>
+  checkLogin();
+</script>
+
 </body>
 </html>
