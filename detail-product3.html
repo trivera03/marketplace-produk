@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Pakan Burung</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="logo">Pakan<span>Ternak</span></div>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+  </ul>
+  <div class="nav-btn">
+    <a href="cart.html" class="btn-outline cart-btn">
+      Cart <span id="cart-count">0</span>
+    </a>
+  </div>
+</nav>
+
+<section class="detail">
+  <div class="detail-img">
+    <img src="img/Pakan-Burung.jpg">
+  </div>
+
+  <div class="detail-info">
+    <h1>Pakan Burung</h1>
+    <p class="price">Rp 30.000</p>
+    <p>
+      Produk premium kualitas terbaik.
+    </p>
+
+    <button class="btn" onclick="addToCart()">Tambah ke Keranjang</button>
+  </div>
+</section>
+
+<script>
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+document.getElementById("cart-count").innerText = cart.length;
+
+function addToCart() {
+  cart.push({
+    name: "Pakan Burung",
+    price: 30000,
+    image: "img/Pakan-Burung.jpg"
+  });
+
+  localStorage.setItem("cart", JSON.stringify(cart));
+  document.getElementById("cart-count").innerText = cart.length;
+  alert("Produk ditambahkan ke keranjang!");
+}
+</script>
+
+</body>
+</html>
